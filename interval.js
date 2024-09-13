@@ -1,8 +1,8 @@
-const saludo = () => {
-    const lista = document.getElementById("lista");
-    const item = document.createElement("li");
-    item.innerHTML = "Hola UAO";
-    lista.appendChild(item);
+const repetirComparacion = () => {
+    const numeros = [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)];
+    const [num1, num2, num3] = numeros;
+    const resultado = compararNumeros(num1, num2, num3);
+    document.getElementById('resultado').innerHTML = `${resultado.mensaje} <br> ${resultado.iguales}`;
 };
-
-setInterval(saludo, 3000); 
+// función cada 5 segundos
+setInterval(repetirComparacion, 5000);

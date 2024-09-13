@@ -1,17 +1,15 @@
-const sumar = (num1, num2) => {
+const obtenerNumeros = () => {
     return new Promise((resolve, reject) => {
-        if (num1 < 0 || num2 < 0) {
-            reject("Esto no es válido"); 
-        } else {
-            resolve(num1 + num2); 
-        }
+        setTimeout(() => {
+            const num1 = Math.floor(Math.random() * 100); 
+            const num2 = Math.floor(Math.random() * 100);
+            const num3 = Math.floor(Math.random() * 100);
+
+            if (typeof num1 === 'number' && typeof num2 === 'number' && typeof num3 === 'number') {
+                resolve([num1, num2, num3]); 
+            } else {
+                reject("Error al obtener los números");
+            }
+        }, 1000); 
     });
 };
-
-const result = sumar(45, 54)
-    .then((res) => {
-        document.write("El resultado es: " + res);
-    })
-    .catch((error) => {
-        document.write("Error: " + error);
-    });
